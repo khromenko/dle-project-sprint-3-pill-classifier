@@ -103,3 +103,12 @@ tqdm>=4.65.0
 jupyter>=1.0.0
 ipywidgets>=8.0.0
 ```
+
+## 6. Настройка переменных окружения
+
+Подговьте `.env` файл:
+
+```env
+OGYEIV2_DATASET_SRC_DIR=<директория_загрузки_датасета_из_Kaggle>
+OGYEIV2_DATASET_DEST_DIR="data/dataset/ogyeiv2/parsed"
+```

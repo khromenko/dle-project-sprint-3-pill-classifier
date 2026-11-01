@@ -9,6 +9,7 @@ authors = [
 requires-python = ">=3.10"
 dependencies = [
     "datasets>=2.14.0",
+    "dotenv>=0.9.9",
     "ipywidgets>=8.0.0",
     "jupyter>=1.0.0",
     "matplotlib>=3.7.0",
@@ -16,10 +17,18 @@ dependencies = [
     "pandas>=2.0.0",
     "tokenizers>=0.13.0",
     "torch>=2.0.0",
+    "torchvision==0.22.0+cpu",
     "tqdm>=4.65.0",
     "transformers>=4.30.0",
 ]
 
-[build-system]
-requires = ["uv_build>=0.13.1,<0.14.0"]
-build-backend = "uv_build"
+[tool.uv]
+package = false
+
+[[tool.uv.index]]
+name = "pytorch-cpu"
+url = "https://download.pytorch.org/whl/cpu"
+explicit = true
+[tool.uv.sources]
+torch = { index = "pytorch-cpu" }
+torchvision = { index = "pytorch-cpu" }
